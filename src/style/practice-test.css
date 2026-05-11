@@ -1,0 +1,5 @@
+.practice-test {
+  padding: var(--space-xxl) var(--space-xl);
+  min-height: 80vh;
+  align-content: center;
+}

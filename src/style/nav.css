@@ -1,0 +1,26 @@
+/* =============================================
+   NAV
+   ============================================= */
+
+nav {
+  background-color: var(--clr-navy-500);
+  box-shadow: var(--box-shadow-sm);
+}
+nav > .content {
+  display: flex;
+  justify-content: space-between;
+  justify-self: center;
+  align-items: center;
+  width: 100%;
+  padding: var(--space-md) var(--space-xxl);
+}
+nav .nav-links {
+  display: flex;
+  gap: var(--space-md);
+}
+nav .nav-title {
+  transition: opacity var(--transition);
+}
+nav .nav-title:hover {
+  opacity: 0.9;
+}
