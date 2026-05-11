@@ -1,16 +1,16 @@
-import React from 'react'
+import React from "react";
 
 type RadioOption = {
-  label: string
-  value: string
-}
+  label: string;
+  value: string;
+};
 
 type Props = {
-  options: RadioOption[]
-  value: string
-  onChange: (value: string) => void
-  name: string
-}
+  options: RadioOption[];
+  value: string;
+  onChange: (value: string) => void;
+  name: string;
+};
 
 export default function Radio({ options, value, onChange, name }: Props) {
   return (
@@ -18,7 +18,7 @@ export default function Radio({ options, value, onChange, name }: Props) {
       {options.map((option) => (
         <label
           key={option.value}
-          className={`radio-option ${value === option.value ? 'radio-option--selected' : ''}`}
+          className={`radio-option ${value === option.value ? "radio-option--selected" : ""}`}
         >
           <input
             className="radio-option__input"
@@ -32,5 +32,5 @@ export default function Radio({ options, value, onChange, name }: Props) {
         </label>
       ))}
     </div>
-  )
+  );
 }

@@ -1,4 +1,10 @@
-type ButtonVariant = "primary" | "secondary" | "light" | "alert" | "success" | "flag" ;
+type ButtonVariant =
+  | "primary"
+  | "secondary"
+  | "light"
+  | "alert"
+  | "success"
+  | "flag";
 type ButtonSize = "square" | "md" | "lg";
 
 type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {

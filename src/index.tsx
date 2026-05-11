@@ -1,41 +1,24 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from "motion/react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./style/index.css";
-import Layout from "./components/Layout";
-import Home from "./pages/Home";
+import Layout from "@/components/Layout";
+import Home from "@/pages/Home";
 import DemoUI from "@/pages/DemoUI";
-import MotionWrapper from "./functions/MotionWrapper";
+import PracticeTest from "@/pages/PracticeTest";
+import GenerateQuestions from "@/pages/GenerateQuestions";
 
 function AppRoutes() {
-  const location = useLocation();
-
   return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Layout />}>
-          <Route
-            index
-            element={
-              <MotionWrapper>
-                {" "}
-                <Home />{" "}
-              </MotionWrapper>
-            }
-          />
-        </Route>
-        <Route
-          path="/demo"
-          element={
-            <MotionWrapper>
-              <DemoUI />
-            </MotionWrapper>
-          }
-        />
-      </Routes>
-    </AnimatePresence>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/demo" element={<DemoUI />} />
+        <Route path="/practice-test" element={<PracticeTest />} />
+        <Route path="/generate-questions" element={<GenerateQuestions />} />
+      </Route>
+    </Routes>
   );
 }
 

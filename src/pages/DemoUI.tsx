@@ -6,11 +6,13 @@ import Spinner from "@/components/ui/Spinner";
 import { useState } from "react";
 import Radio from "@/components/ui/Radio";
 import Checkbox from "@/components/ui/Checkbox";
+import Rating from "@/components/questionGeneration/Rating";
+import ProgressBar from "@/components/practiceTest/ProgressBar";
 
 export default function DemoUI() {
-
-  const [answer, setAnswer] = useState('')
-  const [selected, setSelected] = useState<string[]>([])
+  const [answer, setAnswer] = useState("");
+  const [selected, setSelected] = useState<string[]>([]);
+  const [rating, setRating] = useState(0);
 
   return (
     <div
@@ -23,15 +25,15 @@ export default function DemoUI() {
         margin: "0 auto",
       }}
     >
-      <h1 style={{ fontSize: "2rem", fontWeight: 700, color: "white" }}>UI Component Demo</h1>
+      <h1 style={{ fontSize: "2rem", fontWeight: 700, color: "white" }}>
+        UI Component Demo
+      </h1>
 
       {/* BUTTONS */}
       <section
         style={{ display: "flex", flexDirection: "column", gap: "12px" }}
       >
-        <h2 style={{ fontWeight: 600, color: "var(--color-text)" }}>
-          Button
-        </h2>
+        <h2 style={{ fontWeight: 600, color: "var(--color-text)" }}>Button</h2>
         <div
           style={{
             display: "flex",
@@ -66,9 +68,7 @@ export default function DemoUI() {
       <section
         style={{ display: "flex", flexDirection: "column", gap: "12px" }}
       >
-        <h2 style={{ fontWeight: 600, color: "var(--color-text)" }}>
-          Badge
-        </h2>
+        <h2 style={{ fontWeight: 600, color: "var(--color-text)" }}>Badge</h2>
         <div
           style={{
             display: "flex",
@@ -89,9 +89,7 @@ export default function DemoUI() {
       <section
         style={{ display: "flex", flexDirection: "column", gap: "12px" }}
       >
-        <h2 style={{ fontWeight: 600, color: "var(--color-text)" }}>
-          Card
-        </h2>
+        <h2 style={{ fontWeight: 600, color: "var(--color-text)" }}>Card</h2>
         <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
           <Card
             title="Default Card"
@@ -111,9 +109,7 @@ export default function DemoUI() {
       <section
         style={{ display: "flex", flexDirection: "column", gap: "12px" }}
       >
-        <h2 style={{ fontWeight: 600, color: "var(--color-text)" }}>
-          Card
-        </h2>
+        <h2 style={{ fontWeight: 600, color: "var(--color-text)" }}>Card</h2>
         <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
           <Card
             title="Badges"
@@ -147,9 +143,7 @@ export default function DemoUI() {
       <section
         style={{ display: "flex", flexDirection: "column", gap: "12px" }}
       >
-        <h2 style={{ fontWeight: 600, color: "var(--color-text)" }}>
-          Input
-        </h2>
+        <h2 style={{ fontWeight: 600, color: "var(--color-text)" }}>Input</h2>
         <Card
           title="Default Card"
           subtitle="With a subtitle"
@@ -161,55 +155,67 @@ export default function DemoUI() {
           }
         >
           <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "16px",
-            maxWidth: "400px",
-          }}
-        >
-          <Input id="default" label="Default" placeholder="Placeholder text" />
-          <Input
-            id="hint"
-            label="With hint"
-            hint="This is a helpful hint."
-            placeholder="Placeholder text"
-          />
-          <Input
-            id="error"
-            label="With error"
-            error="This field is required."
-            placeholder="Placeholder text"
-          />
-          <Input
-            id="disabled"
-            label="Disabled"
-            placeholder="Placeholder text"
-            disabled
-          />
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "16px",
+              maxWidth: "400px",
+            }}
+          >
+            <Input
+              id="default"
+              label="Default"
+              placeholder="Placeholder text"
+            />
+            <Input
+              id="hint"
+              label="With hint"
+              hint="This is a helpful hint."
+              placeholder="Placeholder text"
+            />
+            <Input
+              id="error"
+              label="With error"
+              error="This field is required."
+              placeholder="Placeholder text"
+            />
+            <Input
+              id="disabled"
+              label="Disabled"
+              placeholder="Placeholder text"
+              disabled
+            />
 
-          <Radio
-            name="question-1"
-            value={answer}
-            onChange={setAnswer}
-            options={[
-              { label: 'Option A', value: 'a' },
-              { label: 'Option B', value: 'b' },
-              { label: 'Option C', value: 'c' },
-            ]}
-          />
-          
-          <Checkbox
-            value={selected}
-            onChange={setSelected}
-            options={[
-              { label: 'Option A', value: 'a' },
-              { label: 'Option B', value: 'b' },
-              { label: 'Option C', value: 'c' },
-            ]}
-          />
+            <Radio
+              name="question-1"
+              value={answer}
+              onChange={setAnswer}
+              options={[
+                { label: "Option A", value: "a" },
+                { label: "Option B", value: "b" },
+                { label: "Option C", value: "c" },
+              ]}
+            />
 
-        </div>
+            <Checkbox
+              value={selected}
+              onChange={setSelected}
+              options={[
+                { label: "Option A", value: "a" },
+                { label: "Option B", value: "b" },
+                { label: "Option C", value: "c" },
+              ]}
+            />
+
+            <Rating
+              label="Optional label for rating"
+              value={rating}
+              onChange={setRating}
+            />
+
+            <ProgressBar value={13} total={30} />
+            <ProgressBar value={25} total={30} label={false} />
+          </div>
         </Card>
       </section>
 
@@ -217,9 +223,7 @@ export default function DemoUI() {
       <section
         style={{ display: "flex", flexDirection: "column", gap: "12px" }}
       >
-        <h2 style={{ fontWeight: 600, color: "var(--color-text)" }}>
-          Spinner
-        </h2>
+        <h2 style={{ fontWeight: 600, color: "var(--color-text)" }}>Spinner</h2>
         <div style={{ display: "flex", gap: "24px", alignItems: "center" }}>
           <Spinner size={16} />
           <Spinner size={24} />

@@ -1,22 +1,22 @@
-import React from 'react'
+import React from "react";
 
 type CheckboxOption = {
-  label: string
-  value: string
-}
+  label: string;
+  value: string;
+};
 
 type Props = {
-  options: CheckboxOption[]
-  value: string[]
-  onChange: (value: string[]) => void
-}
+  options: CheckboxOption[];
+  value: string[];
+  onChange: (value: string[]) => void;
+};
 
 export default function Checkbox({ options, value, onChange }: Props) {
   function handleChange(optionValue: string) {
     if (value.includes(optionValue)) {
-      onChange(value.filter((v) => v !== optionValue))
+      onChange(value.filter((v) => v !== optionValue));
     } else {
-      onChange([...value, optionValue])
+      onChange([...value, optionValue]);
     }
   }
 
@@ -25,7 +25,7 @@ export default function Checkbox({ options, value, onChange }: Props) {
       {options.map((option) => (
         <label
           key={option.value}
-          className={`checkbox-option ${value.includes(option.value) ? 'checkbox-option--selected' : ''}`}
+          className={`checkbox-option ${value.includes(option.value) ? "checkbox-option--selected" : ""}`}
         >
           <input
             className="checkbox-option__input"
@@ -37,5 +37,5 @@ export default function Checkbox({ options, value, onChange }: Props) {
         </label>
       ))}
     </div>
-  )
+  );
 }
