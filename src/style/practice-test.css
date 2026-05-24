@@ -1,5 +1,50 @@
 .practice-test {
-  padding: var(--space-xxl) var(--space-xl);
-  min-height: 80vh;
+  min-height: calc(100vh - var(--nav-height));
   align-content: center;
+}
+.practice-test > .content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.practice-test > .content > .nav-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: solid 2px rgba(255, 255, 255, 0.25);
+  height: calc(100vh - var(--nav-height));
+  padding: var(--space-xl) var(--space-lg);
+}
+.practice-test > .content > .nav-content > .content > span {
+  display: block;
+  margin: var(--space-lg) var(--space-sm);
+}
+.practice-test > .content > .nav-content > .calc-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+.practice-test > .content > .nav-content > .calc-options > button {
+  width: 100%;
+}
+.practice-test > .content > .nav-content .submit {
+  width: 100%;
+}
+.practice-test > .content > .nav-content > .progress {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+.practice-test .question-list {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  justify-content: center;
+}
+.practice-test .question-list > button {
+  margin: 2.5px;
+}
+.practice-test > .content > .main-content {
+  width: 100vw;
+  justify-items: center;
+  padding: var(--space-xl);
 }

@@ -1,6 +1,6 @@
-type Props = React.HTMLAttributes<HTMLDivElement> & {
-  title?: string;
-  subtitle?: string;
+type Props = Omit<React.HTMLAttributes<HTMLDivElement>, "title"> & {
+  title?: React.ReactNode;
+  subtitle?: React.ReactNode;
   footer?: React.ReactNode;
   flat?: boolean;
 };

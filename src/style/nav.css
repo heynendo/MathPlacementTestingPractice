@@ -5,6 +5,7 @@
 nav {
   background-color: var(--clr-navy-500);
   box-shadow: var(--box-shadow-sm);
+  height: var(--nav-height);
 }
 nav > .content {
   display: flex;

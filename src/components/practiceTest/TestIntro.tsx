@@ -12,7 +12,7 @@ const TOPICS = [
   "Modeling",
 ];
 
-export default function TestIntro() {
+export default function TestIntro({}) {
   const navigate = useNavigate();
 
   const topicList = TOPICS.map((x) => <Badge>{x}</Badge>);

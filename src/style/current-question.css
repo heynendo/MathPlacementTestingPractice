@@ -1,0 +1,20 @@
+.current-question {
+  width: 60vw;
+  max-width: 800px;
+}
+.current-question .card__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.current-question .question {
+  display: block;
+  margin: var(--space-xl) 0;
+}
+.current-question .radio-group {
+  padding: var(--space-md);
+}
+.current-question .card__footer > .options {
+  display: flex;
+  justify-content: space-between;
+}

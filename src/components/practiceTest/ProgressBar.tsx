@@ -16,7 +16,7 @@ export default function ProgressBar({ value, total, label = true }: Props) {
         />
       </div>
       {label && (
-        <span className="progress-bar-label">
+        <span className="progress-bar-label light">
           {value}/{total} answered
         </span>
       )}

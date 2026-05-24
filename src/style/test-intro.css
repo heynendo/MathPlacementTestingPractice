@@ -1,5 +1,6 @@
 .test-intro {
   max-width: 800px;
+  margin: var(--space-xxl) var(--space-xl);
   justify-self: center;
 }
 .test-intro .content {
