@@ -26,9 +26,11 @@ export default function QuestionList({
           variant={
             index === currentQuestion
               ? "light"
-              : selectedAnswers[index]?.answer
-                ? "primary"
-                : "secondary"
+              : selectedAnswers[index]?.flagged
+                ? "flag"
+                : selectedAnswers[index]?.answer
+                  ? "primary"
+                  : "secondary"
           }
           key={index}
           onClick={() => setCurrentQuestion(index)}

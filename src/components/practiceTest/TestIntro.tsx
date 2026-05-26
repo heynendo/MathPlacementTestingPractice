@@ -12,7 +12,11 @@ const TOPICS = [
   "Modeling",
 ];
 
-export default function TestIntro({}) {
+type Props = {
+  setStartTest: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export default function TestIntro({ setStartTest }: Props) {
   const navigate = useNavigate();
 
   const topicList = TOPICS.map((x) => <Badge>{x}</Badge>);
@@ -26,7 +30,9 @@ export default function TestIntro({}) {
           <Button variant="light" onClick={() => navigate("/")}>
             Back to Home
           </Button>
-          <Button variant="primary">Start Now</Button>
+          <Button variant="primary" onClick={() => setStartTest(true)}>
+            Start Now
+          </Button>
         </div>
       }
     >

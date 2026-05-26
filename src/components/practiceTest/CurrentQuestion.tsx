@@ -4,6 +4,7 @@ import Card from "../ui/Card";
 import Radio from "../ui/Radio";
 import PracticeTestQuestions from "@/data/practice-test.json";
 import "@/style/current-question.css";
+import Flag from "../ui/Flag";
 
 type QuestionState = {
   answer: string;
@@ -31,20 +32,37 @@ export default function CurrentQuestion({
       title={
         <>
           {`Question ${currentQuestion + 1}`}
-          <Badge>{PracticeTestQuestions[currentQuestion]?.subject}</Badge>
+          <div className="content">
+            <div
+              className="flag"
+              onClick={() =>
+                setSelectedAnswers((prev) => ({
+                  ...prev,
+                  [currentQuestion]: {
+                    ...prev[currentQuestion],
+                    flagged: !prev[currentQuestion]?.flagged,
+                  },
+                }))
+              }
+            >
+              <Flag filled={selectedAnswers[currentQuestion]?.flagged} />
+              Flag
+            </div>
+            <Badge>{PracticeTestQuestions[currentQuestion]?.subject}</Badge>
+          </div>
         </>
       }
       footer={
         <div className="options">
           <Button
             variant="light"
-            onClick={() => setCurrentQuestion((x) => x - 1)}
+            onClick={() => setCurrentQuestion((x) => (x > 0 ? x - 1 : x))}
           >
             Previous Question
           </Button>
           <Button
             variant="primary"
-            onClick={() => setCurrentQuestion((x) => x + 1)}
+            onClick={() => setCurrentQuestion((x) => (x + 1) % 30)}
           >
             Next Question
           </Button>

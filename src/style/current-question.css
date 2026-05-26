@@ -7,6 +7,27 @@
   justify-content: space-between;
   align-items: center;
 }
+.current-question .card__title > .content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+.current-question .card__title .flag {
+  display: flex;
+  justify-self: end;
+  font-size: var(--font-size-base);
+  color: var(--color-flag);
+  align-items: center;
+  gap: var(--space-sm);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.current-question .card__title .flag:hover {
+  scale: 1.05;
+}
+.current-question .card__title .flag:active {
+  scale: 1;
+}
 .current-question .question {
   display: block;
   margin: var(--space-xl) 0;
