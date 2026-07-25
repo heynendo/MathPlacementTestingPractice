@@ -5,7 +5,7 @@
   gap: var(--space-xl);
 }
 .test-results .card {
-  width: 70vw;
+  width: 92.5vw;
   max-width: 900px;
 }
 .test-results > .main-results h2 {
@@ -14,4 +14,15 @@
   line-height: 3.5rem;
   color: var(--color-primary);
   text-align: center;
+}
+
+.test-results .main-results .card__body{
+  align-items: center;
+  gap: 15px;
+  padding: var(--space-lg);
+}
+.test-results .badge .score{
+  padding: 0 var(--space-lg);
+  font-weight: 700;
+  font-size: 1.75rem;
 }

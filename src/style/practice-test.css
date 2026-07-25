@@ -1,6 +1,7 @@
 .practice-test {
   min-height: calc(100vh - var(--nav-height));
   align-content: center;
+  padding-top: var(--space-lg);
 }
 .practice-test > .content {
   display: flex;

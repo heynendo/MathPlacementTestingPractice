@@ -1,4 +1,4 @@
-type BadgeVariant = "primary" | "secondary" | "success" | "flag" | "alert";
+type BadgeVariant = "primary" | "secondary" | "success" | "flag" | "alert" | "lg";
 
 type Props = React.HTMLAttributes<HTMLSpanElement> & {
   variant?: BadgeVariant;

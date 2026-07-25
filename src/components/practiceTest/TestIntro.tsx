@@ -3,6 +3,7 @@ import Badge from "../ui/Badge";
 import Button from "../ui/Button";
 import Card from "../ui/Card";
 import "@/style/test-intro.css";
+import QuestionIndicator from "../ui/QuestionIndicator";
 
 const TOPICS = [
   "Number & Quantity",
